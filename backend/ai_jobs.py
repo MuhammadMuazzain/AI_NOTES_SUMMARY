@@ -12,6 +12,9 @@ from transcription_goal import TranscriptionGoal
 def start_transcription(url, config):
     logger.debug(f"Starting transcription for URL: {url}")
     headers = {
+        # "Authorization": f"Bearer {config['replicate_api_key']}",
+        # "Content-Type": "application/json",
+
         "Authorization": f"Bearer {config['replicate_api_key']}",
         "Content-Type": "application/json",
     }
@@ -20,6 +23,7 @@ def start_transcription(url, config):
         "input": {
             "debug": False,
             "language": "en",
+            
             "vad_onset": 0.5,
             "audio_file": url,
             "batch_size": 64,
