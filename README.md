@@ -1,122 +1,150 @@
-# AI Video Summarizer
+🎥 AI Video Summarizer
+Transcribe, summarize, and generate intelligent clips from your video and audio files with ease.
 
-Transcribe, summarize, and create smart clips from video and audio content.
+Powered by WhisperX, LLMs (via Replicate and Anthropic), and a sleek web interface.
 
-## Features
+✨ Features
+🎙 Transcription
 
-- **Transcription**: Transcribe audio using WhisperX
-- **Smart Summarization**: Generate concise summaries of video content, tailored to different purposes:
-  - Meeting Minutes
-  - Podcast Summaries
-  - Lecture Notes
-  - Interview Highlights
-  - General Content Summaries
-- **Intelligent Clip Creation**: Automatically create clips of key moments and topics discussed in the video.
-- **Multi-format Support**: Process various video and audio file formats.
-- **Cloud Integration**: Utilizes AWS S3 for efficient file handling and processing.
+Fast and accurate speech-to-text using WhisperX
 
-## Prerequisites
+🧠 Smart Summarization
 
-- Python 3.8+
-- AWS CLI configured with appropriate permissions
-- FFmpeg installed on your system
-- Node.js and npm (for running the frontend GUI)
+Generate concise, context-aware summaries for:
 
-## Installation
+Meeting Minutes
 
-1. Clone the repository:
-   ```
-   git clone https://github.com/sidedwards/ai-video-summarizer.git
-   cd ai-video-summarizer
-   ```
+Podcast Episodes
 
-2. Set up the backend:
-   - Create and activate a virtual environment:
-     ```
-     python -m venv .venv
-     source .venv/bin/activate  # On Windows, use `.venv\Scripts\activate`
-     ```
-   - Install the required dependencies:
-     ```
-     pip install -r requirements.txt
-     ```
-   - Set up your configuration:
-     - Copy `config/config-example.yaml` to `config/config.yaml`
-     - Edit `config/config.yaml` with your API keys and preferences
+Lectures
 
-3. Set up the frontend (optional, for GUI usage):
-   - Navigate to the frontend directory:
-     ```
-     cd frontend
-     ```
-   - Install the required dependencies:
-     ```
-     npm install
-     ```
+Interviews
 
-## Usage
+General Video Content
 
-### CLI
+🎬 Automatic Clip Creation
 
-1. Run the CLI script:
-   ```
-   python backend/cli.py
-   ```
-2. Follow the prompts to select a video file and choose the type of summary you want to generate.
-3. The generated summary files will be saved in a directory named after the input video file.
+Extract key moments as short clips with timestamps and context
 
-### GUI
+🎛 Multi-format Support
 
-1. Start the backend server:
-   - Run the backend server:
-     ```
-     python backend/server.py
-     ```
-2. Start the frontend development server:
-   - In a new terminal window, navigate to the frontend directory:
-     ```
-     cd frontend
-     ```
-   - Run the frontend development server:
-     ```
-     npm run dev
-     ```
-3. Open your web browser and navigate to `http://localhost:5173` to access the AI Video Summarizer GUI.
-4. Use the web interface to upload a video file, select the desired summary type, and start the processing.
-5. Once the processing is complete, you can download the generated summary files as a zip archive.
+Supports most popular video/audio formats
 
-## Configuration
+☁️ Cloud-Ready
 
-Edit `config/config.yaml` to set:
+Uploads and stores files via AWS S3 for streamlined handling
 
-- AWS CLI path and S3 bucket name
-- Replicate API key and model version
-- Anthropic API key and model choice
-- Other customizable parameters
+🧩 Modular
 
-## Roadmap
+Easily swap LLMs or summarization techniques
 
-- [x] Web-based GUI
-- [x] Basic CLI
-- [ ] More LLM options
-- [ ] Export options for various document formats (PDF, DOCX, etc.)
+⚙️ Prerequisites
+Ensure the following tools are installed:
 
-## Contributing
+Python 3.8+
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Node.js & npm (for frontend GUI)
 
-## License
+FFmpeg
 
-[MIT License](LICENSE)
+AWS CLI (configured with access to your S3 bucket)
 
-## Acknowledgements
+🚀 Installation
+1. Clone the Repo
+bash
+Copy
+Edit
+git clone https://github.com/sidedwards/ai-video-summarizer.git
+cd ai-video-summarizer
+2. Backend Setup (Python)
+bash
+Copy
+Edit
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+Configure settings:
 
-### WhisperX
+bash
+Copy
+Edit
+cp config/config-example.yaml config/config.yaml
+# Edit `config.yaml` with your API keys, S3 info, etc.
+3. Frontend Setup (Optional - for GUI)
+bash
+Copy
+Edit
+cd frontend
+npm install
+🧪 Usage
+💻 CLI Mode
+bash
+Copy
+Edit
+python backend/cli.py
+Follow prompts to:
 
-This project uses WhisperX, an advanced version of OpenAI's Whisper model, for transcription. WhisperX offers:
+Select a video/audio file
 
-- Accelerated transcription
-- Advanced speaker diarization
-- Improved accuracy in speaker segmentation
+Choose summary type
 
-The WhisperX model is run via the Replicate API, based on https://github.com/sidedwards/whisperx.
+Output will be saved in a folder named after your input file
+
+🌐 GUI Mode (Web App)
+1. Start Backend Server
+bash
+Copy
+Edit
+python backend/server.py
+2. Start Frontend Server
+In a new terminal:
+
+bash
+Copy
+Edit
+cd frontend
+npm run dev
+Open your browser: http://localhost:5173
+
+Upload files → Choose summary type → Download output as a ZIP file.
+
+⚙️ Configuration
+Edit config/config.yaml to customize:
+
+AWS CLI path + S3 bucket
+
+Replicate API key and model
+
+Anthropic API key (optional)
+
+Transcription/summarization options
+
+📍 Roadmap
+ Web-based GUI
+
+ Intelligent summarization
+
+ Clip generation
+
+ Export to PDF/DOCX
+
+ Add more LLM options (Mistral, OpenRouter, etc.)
+
+ Batch file processing
+
+🤝 Contributing
+Pull Requests and feature suggestions are welcome!
+Feel free to fork, clone, and make magic.
+
+📝 License
+MIT License
+
+🙏 Acknowledgements
+WhisperX — advanced OpenAI Whisper variant
+
+Fast transcription
+
+Speaker diarization
+
+Segment-level accuracy (via Replicate)
+
